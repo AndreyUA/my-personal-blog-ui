@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="menu">
+  {{ selectedLanguage.name }}
+</button>
+
+<mat-menu #menu="matMenu">
+  @for (lang of languages; track lang.code) {
+  <button (click)="selectLang(lang)" mat-menu-item>{{ lang.name }}</button>
+  }
+</mat-menu>

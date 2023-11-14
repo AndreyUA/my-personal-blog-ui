@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, WritableSignal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -32,12 +32,10 @@ const LANGUAGES: Array<Language> = [
   styleUrl: './language-switch.component.scss',
 })
 export class LanguageSwitchComponent {
-  // TODO: https://angular.dev/guide/signals
-  // rebuild it with signals
-  readonly languages: Array<Language> = LANGUAGES;
-  selectedLanguage: Language = LANGUAGES[0];
+  readonly languages: WritableSignal<Array<Language>> = signal(LANGUAGES);
+  selectedLanguage: WritableSignal<Language> = signal(LANGUAGES[0]);
 
   selectLang(lang: Language) {
-    this.selectedLanguage = lang;
+    this.selectedLanguage.set(lang);
   }
 }

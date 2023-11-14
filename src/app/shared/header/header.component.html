@@ -1,6 +1,6 @@
 <div class="header">
   <mat-toolbar color="primary" class="header-toolbar">
-    <div class="header-toolbar-right">
+    <div class="header-toolbar-left">
       <button mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
@@ -8,6 +8,10 @@
       <span>My App</span>
     </div>
 
-    <app-language-switch />
+    <div class="header-toolbar-right">
+      <app-theme-mode-toggler />
+
+      <app-language-switch />
+    </div>
   </mat-toolbar>
 </div>

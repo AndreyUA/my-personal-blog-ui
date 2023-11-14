@@ -2,5 +2,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+
+  &-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &-right {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
 }

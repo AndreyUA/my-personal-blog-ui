@@ -6,16 +6,9 @@
   (change)="toggleTheme()"
 >
   @if (isDarkTheme()) {
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Example home icon"
-    fontIcon="dark_mode"
-  ></mat-icon>
+
+  <mat-icon aria-hidden="false" fontIcon="dark_mode"></mat-icon>
   } @else {
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Example home icon"
-    fontIcon="light_mode"
-  ></mat-icon>
+  <mat-icon aria-hidden="false" fontIcon="light_mode"></mat-icon>
   }
 </mat-slide-toggle>

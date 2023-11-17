@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { IconsService } from './core/services/icons.service';
+import { LocalizationService } from './core/services/localization.service';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,8 @@ import { IconsService } from './core/services/icons.service';
   providers: [IconsService],
 })
 export class AppComponent {
-  constructor(private _iconsService: IconsService) {}
+  constructor(
+    private _iconsService: IconsService,
+    private _localizationService: LocalizationService
+  ) {}
 }

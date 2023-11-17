@@ -1,9 +1,11 @@
 <button mat-button [matMenuTriggerFor]="menu">
-  {{ selectedLanguage().name }}
+  {{ selectedLanguage().name | translate }}
 </button>
 
 <mat-menu #menu="matMenu">
-  @for (lang of languages(); track lang.code) {
-  <button (click)="selectLang(lang)" mat-menu-item>{{ lang.name }}</button>
+  @for (lang of localizationService.availableLanguages(); track lang.code) {
+  <button (click)="selectLang(lang)" mat-menu-item>
+    {{ lang.name | translate }}
+  </button>
   }
 </mat-menu>

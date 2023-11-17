@@ -8,7 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
-import { Language } from './core/services/localization.service';
+import { LanguageTypes } from './core/services/localization.service';
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       HttpClientModule,
       TranslateModule.forRoot({
-        defaultLanguage: Language.ENGLISH,
+        defaultLanguage: LanguageTypes.ENGLISH,
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,

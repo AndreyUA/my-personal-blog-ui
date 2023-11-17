@@ -8,10 +8,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
+import { Language } from './core/services/localization.service';
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
+
+// TODO: resolve it
+// NG02801: Angular detected that `HttpClient` is not configured to use `fetch` APIs. It's strongly recommended to enable `fetch` for applications that use Server-Side Rendering for better performance and compatibility. To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` call at the root of the application.
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,8 +25,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       HttpClientModule,
       TranslateModule.forRoot({
-        // TODO: avoid hardcoding the default language
-        defaultLanguage: 'en',
+        defaultLanguage: Language.ENGLISH,
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
